@@ -40,6 +40,11 @@ public class MainScreen extends javax.swing.JFrame {
         });
 
         btnView.setText("View Data");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -100,16 +105,21 @@ public class MainScreen extends javax.swing.JFrame {
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
 		System.exit(0);
-		// TODO add your handling code here:
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
-        // TODO add your handling code here:
 		LoadScreen load = new LoadScreen();
 		load.setVisible(true);
 		load.setLocationRelativeTo(null);
 		this.dispose();
     }//GEN-LAST:event_btnLoadActionPerformed
+
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+		ViewScreen view = new ViewScreen();
+		view.setVisible(true);
+		view.setLocationRelativeTo(null);
+		this.dispose();
+    }//GEN-LAST:event_btnViewActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExit;
