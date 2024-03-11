@@ -1,6 +1,7 @@
 package com.mycompany.automobile.logic;
 
 import com.mycompany.automobile.persistence.PersistenceController;
+import java.util.List;
 
 public class LogicController {
 
@@ -22,6 +23,10 @@ public class LogicController {
 		
 		persistenceController.create(auto);
 		
+	}
+
+	public List<Automobile> bringingAutomobiles() {
+		return persistenceController.findAutomobileEntities();
 	}
 	
 }

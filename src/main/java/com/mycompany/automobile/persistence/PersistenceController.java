@@ -1,6 +1,7 @@
 package com.mycompany.automobile.persistence;
 
 import com.mycompany.automobile.logic.Automobile;
+import java.util.List;
 
 public class PersistenceController {
 	
@@ -12,6 +13,10 @@ public class PersistenceController {
 
 	public void create(Automobile auto) {
 		autoController.create(auto);
+	}
+
+	public List<Automobile> findAutomobileEntities() {
+		return autoController.findAutomobileEntities();
 	}
 	
 	

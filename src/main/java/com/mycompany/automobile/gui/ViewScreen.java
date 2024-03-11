@@ -184,7 +184,8 @@ public class ViewScreen extends javax.swing.JFrame {
 		
 		if (listAutomobiles != null) {
 			for (Automobile auto : listAutomobiles){
-				Object[] object = {auto.getId(), auto.getModel(), auto.getBrand(), auto.getColor()};
+				Object[] object = {auto.getId(), auto.getModel(), auto.getBrand(), auto.getEngine(),
+				auto.getColor(), auto.getPlate(), auto.getNumberOfDoors()};
 				tableModel.addRow(object);
 			}
 		}
