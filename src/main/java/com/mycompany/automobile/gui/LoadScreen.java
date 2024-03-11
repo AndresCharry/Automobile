@@ -263,7 +263,7 @@ public class LoadScreen extends javax.swing.JFrame {
 
 	private void message(String title, String message, String type) {
 		if (type.equalsIgnoreCase("information")){
-			JOptionPane optionpane = new JOptionPane("Tu mensaje va aquí", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane optionpane = new JOptionPane(message, JOptionPane.INFORMATION_MESSAGE);
 			JDialog dialog = optionpane.createDialog(title);
 			dialog.setAlwaysOnTop(true);
 			dialog.setVisible(true);
