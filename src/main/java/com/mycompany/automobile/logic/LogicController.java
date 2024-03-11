@@ -28,5 +28,9 @@ public class LogicController {
 	public List<Automobile> bringingAutomobiles() {
 		return persistenceController.findAutomobileEntities();
 	}
+
+	public void remove(int id) {
+		persistenceController.remove(id);
+	}
 	
 }

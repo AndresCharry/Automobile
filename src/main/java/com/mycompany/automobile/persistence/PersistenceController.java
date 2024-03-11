@@ -1,7 +1,10 @@
 package com.mycompany.automobile.persistence;
 
 import com.mycompany.automobile.logic.Automobile;
+import com.mycompany.automobile.persistence.exceptions.NonexistentEntityException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class PersistenceController {
 	
@@ -17,6 +20,14 @@ public class PersistenceController {
 
 	public List<Automobile> findAutomobileEntities() {
 		return autoController.findAutomobileEntities();
+	}
+
+	public void remove(int id) {
+		try {
+			autoController.destroy(id);
+		} catch (NonexistentEntityException ex) {
+			Logger.getLogger(PersistenceController.class.getName()).log(Level.SEVERE, null, ex);
+		}
 	}
 	
 	
