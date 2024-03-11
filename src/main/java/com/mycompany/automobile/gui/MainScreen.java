@@ -33,6 +33,11 @@ public class MainScreen extends javax.swing.JFrame {
         });
 
         btnLoad.setText("Load Data");
+        btnLoad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoadActionPerformed(evt);
+            }
+        });
 
         btnView.setText("View Data");
 
@@ -97,6 +102,14 @@ public class MainScreen extends javax.swing.JFrame {
 		System.exit(0);
 		// TODO add your handling code here:
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
+        // TODO add your handling code here:
+		LoadScreen load = new LoadScreen();
+		load.setVisible(true);
+		load.setLocationRelativeTo(null);
+		this.dispose();
+    }//GEN-LAST:event_btnLoadActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExit;
