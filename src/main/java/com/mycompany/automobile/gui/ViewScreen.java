@@ -59,6 +59,11 @@ public class ViewScreen extends javax.swing.JFrame {
 
         btnEdit.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         btnEdit.setText("Edit");
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
 
         btnDelete.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         btnDelete.setText("Delete");
@@ -163,7 +168,6 @@ public class ViewScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
 		if (table.getRowCount() > 0){
 			if (table.getSelectedRow() != -1){
 				int id = Integer.parseInt(String.valueOf(table.getValueAt(table.getSelectedRow(), 0)));
@@ -178,6 +182,24 @@ public class ViewScreen extends javax.swing.JFrame {
 			message("Error", "Table is emty", "error");
 		}
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+		if (table.getRowCount() > 0){
+			if (table.getSelectedRow() != -1){
+				int id = Integer.parseInt(String.valueOf(table.getValueAt(table.getSelectedRow(), 0)));
+				
+				EditScreen edit = new EditScreen(id);
+				edit.setVisible(true);
+				edit.setLocationRelativeTo(null);
+				
+				this.dispose();
+			} else {
+				message("Error", "No Row selected", "error");
+			}
+		} else {
+			message("Error", "Table is emty", "error");
+		}
+    }//GEN-LAST:event_btnEditActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
