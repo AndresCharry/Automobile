@@ -32,5 +32,21 @@ public class LogicController {
 	public void remove(int id) {
 		persistenceController.remove(id);
 	}
+
+	public Automobile findAutomobile(int id) {
+		return persistenceController.findAutomobile(id);
+	}
+
+	public void edit(Automobile auto, String model, String brand, String engine, String color,
+		String plate, String numOfDoors) {
+		auto.setModel(model);
+		auto.setBrand(brand);
+		auto.setEngine(engine);
+		auto.setColor(color);
+		auto.setPlate(plate);
+		auto.setNumberOfDoors(numOfDoors);
+		
+		persistenceController.edit(auto);
+	}
 	
 }

@@ -29,6 +29,18 @@ public class PersistenceController {
 			Logger.getLogger(PersistenceController.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
+
+	public Automobile findAutomobile(int id) {
+		return autoController.findAutomobile(id);
+	}
+
+	public void edit(Automobile auto) {
+		try {
+			autoController.edit(auto);
+		} catch (Exception ex) {
+			Logger.getLogger(PersistenceController.class.getName()).log(Level.SEVERE, null, ex);
+		}
+	}
 	
 	
 	
